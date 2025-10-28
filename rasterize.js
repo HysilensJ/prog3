@@ -276,7 +276,6 @@ function setupShaders() {
     // define fragment shader in essl using es6 template strings
     var fShaderCode = `
         precision mediump float;
-        varying vec3 fragColor;
         varying vec3 fragNormal;
         varying vec3 fragPos;
 
@@ -303,7 +302,7 @@ function setupShaders() {
             vec3 s = sp * specular * lightCol;
             vec3 mainCol = a + d + s;
 
-            gl_FragColor = vec4(mainCol * fragColor, 1.0);
+            gl_FragColor = vec4(mainCol, 1.0);
         }
     `;
     
